@@ -22,6 +22,16 @@ public class UsuarioChatBeanTransitorio extends ItemSimples implements ItfUsuari
     private String codigo;
     private String email;
     private List<String> emailsSecudarios;
+    private String codigoCRMUniversal;
+
+    @Override
+    public String getCodigoCRMUniversal() {
+        return codigoCRMUniversal;
+    }
+
+    public void setCodigoCRMUniversal(String codigoCRMUniversal) {
+        this.codigoCRMUniversal = codigoCRMUniversal;
+    }
 
     @Override
     public String getCodigo() {
