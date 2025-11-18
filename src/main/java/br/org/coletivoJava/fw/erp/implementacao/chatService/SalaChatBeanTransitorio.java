@@ -5,14 +5,14 @@
 package br.org.coletivoJava.fw.erp.implementacao.chatService;
 
 import br.org.coletivoJava.fw.api.erp.chat.model.ComoUsuarioChat;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ItemSimples;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.EntidadeSimples;
 import java.util.List;
 
 /**
  *
  * @author salvio
  */
-public class SalaChatBeanTransitorio extends ItemSimples implements ComoChatSalaBeanRC {
+public class SalaChatBeanTransitorio extends EntidadeSimples implements ComoChatSalaBeanRC {
 
     private String codigo;
     private String nome;
