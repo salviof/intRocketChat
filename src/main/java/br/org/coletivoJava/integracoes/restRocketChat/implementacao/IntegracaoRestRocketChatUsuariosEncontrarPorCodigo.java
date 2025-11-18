@@ -5,7 +5,7 @@ import br.org.coletivoJava.integracoes.restRocketChat.api.users.FabApiRestRokcet
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.conexaoWebServiceClient.ConsumoWSExecucao;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.implementacao.AcaoApiIntegracaoAbstrato;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.FabTipoAgenteClienteApi;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -17,7 +17,7 @@ public class IntegracaoRestRocketChatUsuariosEncontrarPorCodigo
 
     public IntegracaoRestRocketChatUsuariosEncontrarPorCodigo(
             final FabTipoAgenteClienteApi pTipoAgente,
-            final ItfUsuario pUsuario, final java.lang.Object... pParametro) {
+            final ComoUsuario pUsuario, final java.lang.Object... pParametro) {
         super(FabApiRestRokcetChatV1Users.USUARIOS_ENCONTRAR_POR_CODIGO,
                 pTipoAgente, pUsuario, pParametro);
     }

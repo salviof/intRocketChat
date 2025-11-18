@@ -7,7 +7,7 @@ package br.org.coletivoJava.integracoes.restRocketChat.api.mensagens;
 
 import br.org.coletivoJava.integracoes.restRocketChat.api.direct.*;
 import br.org.coletivoJava.integracoes.restRocketChat.api.FabConfigRocketChat;
-import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.ItfFabricaIntegracaoRest;
+import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.ComoFabricaIntegracaoRest;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.conexaoWebServiceClient.FabTipoConexaoRest;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.conexaoWebServiceClient.InfoConsumoRestService;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.servicoRegistrado.FabTipoAutenticacaoRest;
@@ -23,7 +23,7 @@ import com.super_bits.modulosSB.SBCore.modulos.ManipulaArquivo.importacao.FabTip
         nomeIntegracao = FabConfigRocketChat.NOME_APLICACAO,
         configuracao = FabConfigRocketChat.class
 )
-public enum FabApiRestRocketChatMensagens implements ItfFabricaIntegracaoRest {
+public enum FabApiRestRocketChatMensagens implements ComoFabricaIntegracaoRest {
     @InfoConsumoRestService(getPachServico = "/api/v1/chat.postMessage",
             tipoConexao = FabTipoConexaoRest.POST, tipoInformacaoEnviada = FabTipoArquivoImportacao.JSON,
             tipoInformacaoRecebida = FabTipoArquivoImportacao.JSON,

@@ -15,7 +15,7 @@ import com.super_bits.modulosSB.SBCore.integracao.rocketChat.implementacaoRCRest
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import br.org.coletivoJava.fw.erp.implementacao.chatService.ItfChatSalaBeanRC;
+import br.org.coletivoJava.fw.erp.implementacao.chatService.ComoChatSalaBeanRC;
 
 /**
  *

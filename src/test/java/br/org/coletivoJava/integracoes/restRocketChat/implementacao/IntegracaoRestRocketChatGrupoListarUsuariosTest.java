@@ -13,7 +13,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import br.org.coletivoJava.fw.erp.implementacao.chatService.ItfChatSalaBeanRC;
+import br.org.coletivoJava.fw.erp.implementacao.chatService.ComoChatSalaBeanRC;
 
 /**
  *
@@ -33,7 +33,7 @@ public class IntegracaoRestRocketChatGrupoListarUsuariosTest {
     public void testSomeMethod() {
         // TODO review the generated test code and remove the default call to fail.
         ServicoChatRocketChat instance = new ServicoChatRocketChat();
-        ItfChatSalaBeanRC sala = instance.getChat("TECNOLGIA");
+        ComoChatSalaBeanRC sala = instance.getChat("TECNOLGIA");
         instance.adicionarUsuario(sala, "salviof@gmail.com");
     }
 

@@ -4,7 +4,7 @@
  */
 package br.org.coletivoJava.fw.erp.implementacao.chatService;
 
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
 import java.util.List;
 
 /**
@@ -13,34 +13,34 @@ import java.util.List;
  */
 public interface ItfErpChatService {
 
-    public ItfChatSalaBeanRC getChat(String nomeSala);
+    public ComoChatSalaBeanRC getChat(String nomeSala);
 
-    public ItfChatSalaBeanRC getChatCriandoSeNaoExistir(String nomeSala) throws ErroConexaoServicoChat;
+    public ComoChatSalaBeanRC getChatCriandoSeNaoExistir(String nomeSala) throws ErroConexaoServicoChat;
 
-    public boolean excluirSala(ItfChatSalaBeanRC nomeSala) throws ErroConexaoServicoChat;
+    public boolean excluirSala(ComoChatSalaBeanRC nomeSala) throws ErroConexaoServicoChat;
 
     public boolean autenticarSessao(String pEmail, String pSenha) throws ErroConexaoServicoChat;
 
-    public List<ItfUsuarioChatRC> atualizarListaDeUsuarios() throws ErroConexaoServicoChat;
+    public List<ComoUsuarioChatRC> atualizarListaDeUsuarios() throws ErroConexaoServicoChat;
 
-    public ItfUsuarioChatRC getUsuario(String pEmail) throws ErroConexaoServicoChat;
+    public ComoUsuarioChatRC getUsuario(String pEmail) throws ErroConexaoServicoChat;
 
-    public ItfUsuarioChatRC getUsuarioByCodigo(String pCodigo) throws ErroConexaoServicoChat;
+    public ComoUsuarioChatRC getUsuarioByCodigo(String pCodigo) throws ErroConexaoServicoChat;
 
-    public List<ItfUsuarioChatRC> getUsuarios();
+    public List<ComoUsuarioChatRC> getUsuarios();
 
-    public ItfUsuarioChatRC criarUsuario(ItfUsuario pUsuario) throws ErroConexaoServicoChat;
+    public ComoUsuarioChatRC criarUsuario(ComoUsuario pUsuario) throws ErroConexaoServicoChat;
 
-    public ItfUsuarioChatRC criarUsuario(ItfUsuario pUsuario, String pSenha) throws ErroConexaoServicoChat;
+    public ComoUsuarioChatRC criarUsuario(ComoUsuario pUsuario, String pSenha) throws ErroConexaoServicoChat;
 
-    public boolean adicionarUsuario(ItfChatSalaBeanRC pSala, String pEmailSenha) throws ErroConexaoServicoChat;
+    public boolean adicionarUsuario(ComoChatSalaBeanRC pSala, String pEmailSenha) throws ErroConexaoServicoChat;
 
-    public ItfUsuarioChatRC getUsuarioLogado();
+    public ComoUsuarioChatRC getUsuarioLogado();
 
-    public ItfUsuarioChatRC efetuarLogin(ItfUsuario pUsuario);
+    public ComoUsuarioChatRC efetuarLogin(ComoUsuario pUsuario);
 
-    public ItfUsuarioChatRC efetuarLogin(ItfUsuario pUsuario, String pSenha);
+    public ComoUsuarioChatRC efetuarLogin(ComoUsuario pUsuario, String pSenha);
 
-    public ItfChatSalaBeanRC getSalaAtualizada(ItfChatSalaBeanRC pSala);
+    public ComoChatSalaBeanRC getSalaAtualizada(ComoChatSalaBeanRC pSala);
 
 }

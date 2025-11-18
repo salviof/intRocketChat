@@ -9,7 +9,7 @@ import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.conexaoWebSer
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.implementacao.AcaoApiIntegracaoAbstrato;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.FabTipoAgenteClienteApi;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.token.ItfTokenGestao;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
 import jakarta.json.JsonObjectBuilder;
 
 @InfoIntegracaoRestRocketChatChannel(tipo = FabApiRestRocketChatV1Channel.ENVIAR_MENSAGEM)
@@ -19,7 +19,7 @@ public class IntegracaoRestRocketChatEnviarMensagem
 
     public IntegracaoRestRocketChatEnviarMensagem(
             final FabTipoAgenteClienteApi pTipoAgente,
-            final ItfUsuario pUsuario, final java.lang.Object... pParametro) {
+            final ComoUsuario pUsuario, final java.lang.Object... pParametro) {
         super(FabApiRestRocketChatV1Channel.ENVIAR_MENSAGEM, pTipoAgente,
                 pUsuario, pParametro);
     }

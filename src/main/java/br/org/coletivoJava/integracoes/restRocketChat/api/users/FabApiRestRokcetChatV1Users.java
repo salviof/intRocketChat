@@ -7,13 +7,13 @@ package br.org.coletivoJava.integracoes.restRocketChat.api.users;
 
 import br.org.coletivoJava.integracoes.restRocketChat.api.FabConfigRocketChat;
 import br.org.coletivoJava.integracoes.restRocketChat.implementacao.GestaoTokenRestRocketChat;
-import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.ItfFabricaIntegracaoRest;
+import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.ComoFabricaIntegracaoRest;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.conexaoWebServiceClient.FabTipoConexaoRest;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.conexaoWebServiceClient.InfoConsumoRestService;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.servicoRegistrado.FabTipoAutenticacaoRest;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.servicoRegistrado.InfoConfigRestClientIntegracao;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.token.ItfTokenGestao;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
 
 /**
  *
@@ -24,7 +24,7 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basic
         nomeIntegracao = FabConfigRocketChat.NOME_APLICACAO,
         configuracao = FabConfigRocketChat.class
 )
-public enum FabApiRestRokcetChatV1Users implements ItfFabricaIntegracaoRest {
+public enum FabApiRestRokcetChatV1Users implements ComoFabricaIntegracaoRest {
 
     @InfoConsumoRestService(getPachServico = "/api/v1/users.list",
             tipoConexao = FabTipoConexaoRest.GET,
@@ -69,12 +69,12 @@ public enum FabApiRestRokcetChatV1Users implements ItfFabricaIntegracaoRest {
 
     @Override
     public GestaoTokenRestRocketChat getGestaoToken() {
-        return (GestaoTokenRestRocketChat) ItfFabricaIntegracaoRest.super.getGestaoToken(); //To change body of generated methods, choose Tools | Templates.
+        return (GestaoTokenRestRocketChat) ComoFabricaIntegracaoRest.super.getGestaoToken(); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public GestaoTokenRestRocketChat getGestaoToken(ItfUsuario pUsuario) {
-        return (GestaoTokenRestRocketChat) ItfFabricaIntegracaoRest.super.getGestaoToken(pUsuario); //To change body of generated methods, choose Tools | Templates.
+    public GestaoTokenRestRocketChat getGestaoToken(ComoUsuario pUsuario) {
+        return (GestaoTokenRestRocketChat) ComoFabricaIntegracaoRest.super.getGestaoToken(pUsuario); //To change body of generated methods, choose Tools | Templates.
 
     }
 

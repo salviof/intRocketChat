@@ -5,7 +5,7 @@
  */
 package br.org.coletivoJava.integracoes.restRocketChat.api.channel;
 
-import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.ItfFabricaIntegracaoRest;
+import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.ComoFabricaIntegracaoRest;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.conexaoWebServiceClient.FabTipoConexaoRest;
 import br.org.coletivoJava.integracoes.restRocketChat.api.FabConfigRocketChat;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.conexaoWebServiceClient.InfoConsumoRestService;
@@ -22,7 +22,7 @@ import com.super_bits.modulosSB.SBCore.modulos.ManipulaArquivo.importacao.FabTip
         nomeIntegracao = FabConfigRocketChat.NOME_APLICACAO,
         configuracao = FabConfigRocketChat.class
 )
-public enum FabApiRestRocketChatV1Channel implements ItfFabricaIntegracaoRest {
+public enum FabApiRestRocketChatV1Channel implements ComoFabricaIntegracaoRest {
 
     @InfoConsumoRestService(getPachServico = "/api/v1/groups.listAll",
             tipoConexao = FabTipoConexaoRest.GET,

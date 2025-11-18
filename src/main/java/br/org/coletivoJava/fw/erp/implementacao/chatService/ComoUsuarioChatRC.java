@@ -4,13 +4,13 @@
  */
 package br.org.coletivoJava.fw.erp.implementacao.chatService;
 
-import br.org.coletivoJava.fw.api.erp.chat.model.ItfUsuarioChat;
+import br.org.coletivoJava.fw.api.erp.chat.model.ComoUsuarioChat;
 
 /**
  *
  * @author salvio
  */
-public interface ItfUsuarioChatRC extends ItfUsuarioChat {
+public interface ComoUsuarioChatRC extends ComoUsuarioChat {
 
     public String getCodigo();
 

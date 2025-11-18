@@ -5,7 +5,7 @@ import br.org.coletivoJava.integracoes.restRocketChat.api.channel.FabApiRestRock
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.conexaoWebServiceClient.ConsumoWSExecucao;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.implementacao.AcaoApiIntegracaoAbstrato;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.FabTipoAgenteClienteApi;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
 
 @InfoIntegracaoRestRocketChatChannel(tipo = FabApiRestRocketChatV1Channel.QUEM_SOU_EU)
 public class IntegracaoRestRocketChatQuemSouEu
@@ -14,7 +14,7 @@ public class IntegracaoRestRocketChatQuemSouEu
 
     public IntegracaoRestRocketChatQuemSouEu(
             final FabTipoAgenteClienteApi pTipoAgente,
-            final ItfUsuario pUsuario, final java.lang.Object... pParametro) {
+            final ComoUsuario pUsuario, final java.lang.Object... pParametro) {
         super(FabApiRestRocketChatV1Channel.QUEM_SOU_EU, pTipoAgente, pUsuario,
                 pParametro);
     }

@@ -15,7 +15,7 @@ import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.token.ItfTok
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.token.TokenDeAcessoExternoDinamico;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.implementacao.UtilSBApiRestClient;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.implementacao.gestaoToken.GestaoTokenDinamico;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
 import jakarta.json.JsonObject;
 import java.util.Date;
 import java.util.HashMap;
@@ -29,7 +29,7 @@ public class GestaoTokenRestRocketChat extends GestaoTokenDinamico {
 
     public GestaoTokenRestRocketChat(
             final FabTipoAgenteClienteApi pTipoAgente,
-            final ItfUsuario pUsuario) {
+            final ComoUsuario pUsuario) {
         super(FabApiRestRocketChatV1Channel.class, pTipoAgente, pUsuario);
     }
 
@@ -127,7 +127,7 @@ public class GestaoTokenRestRocketChat extends GestaoTokenDinamico {
         this.loginSenhaUsuario = LoginSenhaUsuario;
     }
 
-    public static GestaoTokenRestRocketChat getInstancia(ItfUsuario pUsuario) {
+    public static GestaoTokenRestRocketChat getInstancia(ComoUsuario pUsuario) {
         return (GestaoTokenRestRocketChat) FabApiRestRocketChatV1Channel.GRUPO_ADICIONAR_USUARIO.getGestaoToken(pUsuario);
     }
 

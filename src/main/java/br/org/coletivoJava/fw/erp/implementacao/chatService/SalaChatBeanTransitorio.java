@@ -4,7 +4,7 @@
  */
 package br.org.coletivoJava.fw.erp.implementacao.chatService;
 
-import br.org.coletivoJava.fw.api.erp.chat.model.ItfUsuarioChat;
+import br.org.coletivoJava.fw.api.erp.chat.model.ComoUsuarioChat;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ItemSimples;
 import java.util.List;
 
@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author salvio
  */
-public class SalaChatBeanTransitorio extends ItemSimples implements ItfChatSalaBeanRC {
+public class SalaChatBeanTransitorio extends ItemSimples implements ComoChatSalaBeanRC {
 
     private String codigo;
     private String nome;
@@ -20,7 +20,7 @@ public class SalaChatBeanTransitorio extends ItemSimples implements ItfChatSalaB
     private String urlSalaFull;
     private boolean existe;
 
-    private List<ItfUsuarioChatRC> usuarios;
+    private List<ComoUsuarioChatRC> usuarios;
 
     @Override
     public String getCodigo() {
@@ -68,11 +68,11 @@ public class SalaChatBeanTransitorio extends ItemSimples implements ItfChatSalaB
     }
 
     @Override
-    public List<ItfUsuarioChat> getUsuarios() {
+    public List<ComoUsuarioChat> getUsuarios() {
         return (List) usuarios;
     }
 
-    public void setUsuarios(List<ItfUsuarioChatRC> usuarios) {
+    public void setUsuarios(List<ComoUsuarioChatRC> usuarios) {
         this.usuarios = usuarios;
     }
 
