@@ -6,8 +6,8 @@ import br.org.coletivoJava.integracoes.restRocketChat.api.channel.FabApiRestRock
 import br.org.coletivoJava.integracoes.restRocketChat.api.FabConfigRocketChat;
 import br.org.coletivoJava.integracoes.restRocketChat.api.sessao.FabApiRestRocketChatSessao;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreDataHora;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreJson;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCDataHora;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCJson;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.conexaoWebServiceClient.ItfRespostaWebServiceSimples;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.FabTipoAgenteClienteApi;
 
@@ -58,8 +58,8 @@ public class GestaoTokenRestRocketChat extends GestaoTokenDinamico {
                     new HashMap<>(), "user=" + usuarioLogin + "&password=" + senhaLogin);
             if (resposta.isSucesso()) {
                 JsonObject jsonArquivado = resposta.getRespostaComoObjetoJson();
-                jsonArquivado = UtilSBCoreJson.getJsonObjectIncrementandoCampo(jsonArquivado, "dataHora", new Date().getTime());
-                armazenarRespostaToken(UtilSBCoreJson.getTextoByJsonObjeect(jsonArquivado));
+                jsonArquivado = UtilCRCJson.getJsonObjectIncrementandoCampo(jsonArquivado, "dataHora", new Date().getTime());
+                armazenarRespostaToken(UtilCRCJson.getTextoByJsonObjeect(jsonArquivado));
             } else {
                 SBCore.enviarAvisoAoUsuario("Usuário ou senha inválida, verifique suas credenciais em " + getConfig().getPropriedade(FabConfigRocketChat.URL_SERVIDOR_ROCKET_CHAT));
             }
@@ -72,12 +72,12 @@ public class GestaoTokenRestRocketChat extends GestaoTokenDinamico {
     public ItfTokenDeAcessoExterno extrairToken(JsonObject pJson) {
         try {
             codigoUsuarioRocketChat = pJson.getJsonObject("data").getString("userId");
-            Date dataHoraExipira = UtilSBCoreDataHora.decrementaMinutos(new Date(), 5);
+            Date dataHoraExipira = UtilCRCDataHora.decrementaMinutos(new Date(), 5);
 
             if (pJson.containsKey("dataHora")) {
 
                 Date dataHoraGeracaoToken = new Date((long) pJson.getJsonNumber("dataHora").longValue());
-                dataHoraExipira = UtilSBCoreDataHora.incrementaHoras(dataHoraGeracaoToken, 6);
+                dataHoraExipira = UtilCRCDataHora.incrementaHoras(dataHoraGeracaoToken, 6);
             }
 
             String chaveToken = pJson.getJsonObject("data").getString("authToken").toString();

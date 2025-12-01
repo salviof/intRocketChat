@@ -2,7 +2,7 @@ package br.org.coletivoJava.integracoes.restRocketChat.implementacao;
 
 import br.org.coletivoJava.integracoes.restRocketChat.api.InfoIntegracaoRestRocketChatMensagens;
 import br.org.coletivoJava.integracoes.restRocketChat.api.mensagens.FabApiRestRocketChatMensagens;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreJson;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCJson;
 import com.super_bits.modulosSB.SBCore.UtilGeral.json.ErroProcessandoJson;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.implementacao.AcaoApiIntegracaoAbstrato;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.FabTipoAgenteClienteApi;
@@ -50,18 +50,18 @@ public class IntegracaoRestRocketChatEnvioMensagemComAnexo
         }
 
         try {
-            JsonObjectBuilder jsonCorpoMensagem = UtilSBCoreJson.getJsonBuilderBySequenciaChaveValor(propriedadetipoCanal, pCanal_sala, "alias", pApelido, "text", pMensagem);
+            JsonObjectBuilder jsonCorpoMensagem = UtilCRCJson.getJsonBuilderBySequenciaChaveValor(propriedadetipoCanal, pCanal_sala, "alias", pApelido, "text", pMensagem);
 
             if (temAnexo) {
                 String pTituloImage = (String) parametros.get(3);
                 String pUrlImagem = (String) parametros.get(4);
                 JsonArrayBuilder builderArrayAnexxos = Json.createArrayBuilder();
-                JsonObject jsonAnexos = UtilSBCoreJson
+                JsonObject jsonAnexos = UtilCRCJson
                         .getJsonObjectBySequenciaChaveValor("title", pTituloImage, "image_url", pUrlImagem);
                 builderArrayAnexxos.add(jsonAnexos);
                 jsonCorpoMensagem.add("attachments", builderArrayAnexxos);
             }
-            String texto = UtilSBCoreJson.getTextoByJsonObjeect(jsonCorpoMensagem.build());
+            String texto = UtilCRCJson.getTextoByJsonObjeect(jsonCorpoMensagem.build());
             return texto;
         } catch (ErroProcessandoJson ex) {
             throw new UnsupportedOperationException("Falha definindo parametros de requisição" + ex.getMessage());

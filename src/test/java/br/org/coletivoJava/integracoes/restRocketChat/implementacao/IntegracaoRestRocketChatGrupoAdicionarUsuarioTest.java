@@ -9,7 +9,7 @@ import br.org.coletivoJava.integracoes.restRocketChat.api.channel.FabApiRestRock
 import br.org.coletivoJava.integracoes.restRocketChat.api.sessao.FabApiRestRocketChatSessao;
 import br.org.coletivoJava.integracoes.restRocketChat.api.users.FabApiRestRokcetChatV1Users;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreJson;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCJson;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.conexaoWebServiceClient.ItfRespostaWebServiceSimples;
 import com.super_bits.modulosSB.SBCore.integracao.rocketChat.implementacaoRCRest.ConfigCoreRCTestesRegraNegocio;
 import org.junit.Assert;
@@ -36,10 +36,10 @@ public class IntegracaoRestRocketChatGrupoAdicionarUsuarioTest {
     public void testSomeMethod() {
         ItfRespostaWebServiceSimples resposta = FabApiRestRokcetChatV1Users.USUARIOS_ENCONTRAR_POR_EMAIL.getAcao("salviof@gmail.com").getResposta();
         if (resposta.isSucesso()) {
-            String userID = UtilSBCoreJson.getValorApartirDoCaminho("users[0]._id", resposta.getRespostaComoObjetoJson());
+            String userID = UtilCRCJson.getValorApartirDoCaminho("users[0]._id", resposta.getRespostaComoObjetoJson());
             ItfRespostaWebServiceSimples respostaGrupo = FabApiRestRocketChatV1Channel.GRUPO_EXISTE_GRUPO.getAcao("Govenanca").getResposta();
             System.out.println(respostaGrupo.getRespostaTexto());
-            String grupoId = UtilSBCoreJson.getValorApartirDoCaminho("group._id", respostaGrupo.getRespostaComoObjetoJson());
+            String grupoId = UtilCRCJson.getValorApartirDoCaminho("group._id", respostaGrupo.getRespostaComoObjetoJson());
             System.out.println(userID);
             ItfRespostaWebServiceSimples respostaAddUserGrupo = FabApiRestRocketChatV1Channel.GRUPO_ADICIONAR_USUARIO.getAcao(grupoId, "wmaPJFFs4xPSCvkRF").getResposta();
             System.out.println(respostaAddUserGrupo.getRespostaTexto());

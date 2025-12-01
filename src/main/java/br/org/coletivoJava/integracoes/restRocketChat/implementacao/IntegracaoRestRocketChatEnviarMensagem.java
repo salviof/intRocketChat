@@ -2,7 +2,7 @@ package br.org.coletivoJava.integracoes.restRocketChat.implementacao;
 
 import br.org.coletivoJava.integracoes.restRocketChat.api.InfoIntegracaoRestRocketChatChannel;
 import br.org.coletivoJava.integracoes.restRocketChat.api.channel.FabApiRestRocketChatV1Channel;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreJson;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCJson;
 import com.super_bits.modulosSB.SBCore.UtilGeral.json.ErroProcessandoJson;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.conexaoWebServiceClient.ItfRespostaWebServiceSimples;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.conexaoWebServiceClient.RespostaWebServiceSimples;
@@ -59,9 +59,9 @@ public class IntegracaoRestRocketChatEnviarMensagem
         }
 
         try {
-            JsonObjectBuilder jsonCorpoMensagem = UtilSBCoreJson.getJsonBuilderBySequenciaChaveValor(propriedadetipoCanal, pCanal_sala, "alias", pApelido, "text", pMensagem);
+            JsonObjectBuilder jsonCorpoMensagem = UtilCRCJson.getJsonBuilderBySequenciaChaveValor(propriedadetipoCanal, pCanal_sala, "alias", pApelido, "text", pMensagem);
 
-            String texto = UtilSBCoreJson.getTextoByJsonObjeect(jsonCorpoMensagem.build());
+            String texto = UtilCRCJson.getTextoByJsonObjeect(jsonCorpoMensagem.build());
             return texto;
         } catch (ErroProcessandoJson ex) {
             throw new UnsupportedOperationException("Falha definindo parametros de requisição" + ex.getMessage());
