@@ -4,7 +4,7 @@
  */
 package br.org.coletivoJava.fw.erp.implementacao.chatService;
 
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.entidade.basico.ComoUsuario;
 import java.util.List;
 
 /**
