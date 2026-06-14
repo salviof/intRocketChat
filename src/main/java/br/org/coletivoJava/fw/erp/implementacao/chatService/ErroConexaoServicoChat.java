@@ -4,13 +4,13 @@
  */
 package br.org.coletivoJava.fw.erp.implementacao.chatService;
 
-import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.ErroSBCoreFW;
+import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.ErroCRCCoreFW;
 
 /**
  *
  * @author salvio
  */
-public class ErroConexaoServicoChat extends ErroSBCoreFW {
+public class ErroConexaoServicoChat extends ErroCRCCoreFW {
 
     public ErroConexaoServicoChat(String pErro) {
         super(pErro);
