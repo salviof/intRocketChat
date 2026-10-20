@@ -5,8 +5,8 @@
  */
 package com.super_bits.modulosSB.SBCore.integracao.rocketChat.implementacaoRCRest;
 
+import com.super_bits.modulosSB.SBCore.ConfigGeral.ComoContextoExecCustomizavel;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.ConfiguradorCoreDeProjetoJarAbstrato;
-import com.super_bits.modulosSB.SBCore.ConfigGeral.ItfConfiguracaoCoreCustomizavel;
 
 /**
  *
@@ -17,7 +17,7 @@ import com.super_bits.modulosSB.SBCore.ConfigGeral.ItfConfiguracaoCoreCustomizav
 public class ConfigCoreRCTestesRegraNegocio extends ConfiguradorCoreDeProjetoJarAbstrato {
 
     @Override
-    public void defineFabricasDeACao(ItfConfiguracaoCoreCustomizavel pConfig) {
+    public void defineFabricasDeACao(ComoContextoExecCustomizavel pConfig) {
 
     }
 
